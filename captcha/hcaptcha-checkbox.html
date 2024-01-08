@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>hCaptcha</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Security-Policy" content="object-src 'none'; base-uri 'self'; script-src 'self' 'unsafe-inline' https: 'sha256-dZke0dSgqgdAyKm4U/cXQBl82WKJUVn7CqIzTsWUFcI=' 'strict-dynamic' 'unsafe-eval';">
+<script type="text/javascript">!function(){for(var e="https://newassets.hcaptcha.com/captcha/v1/89f9b6a",t={},s=document.getElementsByTagName("HEAD")[0],c=window.location.hash.slice(1).split("&"),a=0;a<c.length;a++){var n=c[a].split("=");t[n[0]]=n[1]}var h=t.assethost?decodeURIComponent(t.assethost)+(e.indexOf(".com")>0?e.substr(e.indexOf(".com")+4,e.length):""):e,o=document.createElement("script");o.type="text/javascript",o.src=h+"/hcaptcha-checkbox.js",s.appendChild(o);var l=document.createElement("link");l.rel="stylesheet",l.type="text/css",l.href=h+"/static/css/style.css",s.appendChild(l)}();</script>
+<style type="text/css">*{-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}body,html{margin:0;padding:0;font-family:helvetica,arial,sans-serif;overflow:hidden;height:100%;width:100%}fieldset{margin:0;padding:15px 20px;border:none}button:focus,input:focus,select:focus,textarea:focus{outline:0}:focus{outline:0}.using-kb :focus{outline:1px #185abc solid}textarea{border:none;overflow:auto;outline:0;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;resize:none}.no-selection{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#checkbox-a11y-label{display:none}</style>
+</head>
+<body class="no-selection" style="display:none">
+<div id="anchor">
+<div class="anchor-content">
+<div class="checkbox-wrapper">
+<div class="checkbox-container">
+<div class="checkbox-td">
+<div class="checkbox-tc">
+<div id="checkbox" class="checkbox" tabindex="0" role="checkbox" aria-checked="false" aria-labelledby="checkbox-label checkbox-a11y-label"></div>
+</div>
+</div>
+<div aria-hidden="true" id="checkbox-a11y-label">hCaptcha checkbox. Select in order to trigger the challenge, or to bypass it if you have an accessibility cookie.</div>
+</div>
+<div class="label-container">
+<div class="checkbox-td">
+<div class="checkbox-tc">
+<div id="checkbox-label" class="no-selection" aria-hidden="true">I am human</div>
+</div>
+</div>
+</div>
+</div>
+<div class="logo-container">
+<span id="logo" class="logo-link" data-href="https://www.hcaptcha.com/what-is-hcaptcha-about" aria-label="Visit hcaptcha.com to learn more about the service and its accessibility options.">
+<div class="logo" id="icon"></div>
+</span>
+<div class="terms-container">
+<span id="privacy-link" data-href="https://www.hcaptcha.com/privacy" aria-label="hCaptcha Privacy Policy">Privacy</span>
+<span aria-hidden="true"> - </span>
+<span id="terms-link" data-href="https://www.hcaptcha.com/terms" aria-label="hCaptcha Terms of Service">Terms</span>
+</div>
+</div>
+</div>
+<div id="config-error" class="warning" role="alert"></div>
+<div id="config-warning" class="warning"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+static function OnBeforeResponse(oSession: Session) {
+
+        /*if (oSession.fullUrl == "https://www.nakedcph.com/"){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            oSession.oResponse["Expect-CT"] = "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"";
+            oSession.oResponse["Serve"] = "cloudflare";
+            oSession.oResponse["CF-RAY"] = "6427998e3ab22d43-KBP";
+            oSession.oResponse["cf-request-id"] = "098c9e4ce200002d4329032000000001";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\naked_403.html");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+        if (oSession.uriContains("/captcha/v1/89f9b6a/static/hcaptcha-challenge.html")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            oSession.oResponse["Expect-CT"] = "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"";
+            oSession.oResponse["Serve"] = "cloudflare";
+            oSession.oResponse["CF-RAY"] = "6427998e3ab22d43-KBP";
+            oSession.oResponse["cf-request-id"] = "098c9e4ce200002d4329032000000001";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha-challenge.html");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+
+
+        if (oSession.uriContains("/captcha/v1/89f9b6a/static/hcaptcha-checkbox.html")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            oSession.oResponse["Expect-CT"] = "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"";
+            oSession.oResponse["Serve"] = "cloudflare";
+            oSession.oResponse["CF-RAY"] = "6427998e3ab22d43-KBP";
+            oSession.oResponse["cf-request-id"] = "098c9e4ce200002d4329032000000001";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha-checkbox.html");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }*/
+
+        var srcCaptchaFile = "D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\captcha_v1.js";
+        var deobfCaptchaFile = "D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\captcha_v1.deobfuscated.js";
+        var deobfuscatorFile = "D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\cloudflare_deobfuscator.js";
+
+        if (oSession.uriContains("/cdn-cgi/challenge-platform/h/b/orchestrate/captcha/v1")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            oSession.oResponse["Cf-Bgj"] = "minify";
+            oSession.oResponse["CF-Cache-Status"] = "HIT";
+            oSession.oResponse["Cf-Polished"] = "origSize=100659";
+            oSession.oResponse["CF-RAY"] = "642799945bef3274-KBP";
+            oSession.oResponse["cf-request-id"] = "098c9e50c100003274b495c000000001";
+            oSession.oResponse["ETag"] = "W/\"7b301cc0da31f753403915c11271bbd5\"";
+            oSession.oResponse["Expect-CT"] = "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"";
+            oSession.oResponse["Last-Modified"] = "Thu, 15 Apr 2021 13:43:27 GMT";
+            oSession.oResponse["Server"] = "cloudflare";
+
+            oSession.oResponse["Strict-Transport-Security"] = "max-age=2592000; includeSubDomains; preload1";
+            oSession.oResponse["Via"] = "1.1 bb014bef6518ccd6aad6b497f5e9c1d2.cloudfront.net (CloudFront)1";
+            oSession.oResponse["X-Amz-Cf-Id"] = "W9-2WiM57uV1QlYjGE0Zr3cvZW5cZ56qybOJZm8K7k0U1diMfggO8Q==1";
+            oSession.oResponse["X-Amz-Cf-Pop"] = "VIE50-C11";
+            oSession.oResponse["X-Cache"] = "Hit from cloudfront1";
+            oSession.oResponse["X-Content-Type-Options"] = "nosniff1";
+
+            oSession.utilDecodeResponse();
+            oSession.SaveResponseBody(srcCaptchaFile)
+            Utilities.RunExecutableAndWait("node", deobfuscatorFile + " " + srcCaptchaFile + " " + deobfCaptchaFile);
+
+
+            var deobfuscatedV = System.IO.File.ReadAllText(deobfCaptchaFile);
+            oSession.oResponse["X-Alantoo"]="It's me";
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+        if (oSession.uriContains("/captcha/v1/89f9b6a/hcaptcha-checkbox.js")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            oSession.oResponse["Cf-Bgj"] = "minify";
+            oSession.oResponse["CF-Cache-Status"] = "HIT";
+            oSession.oResponse["Cf-Polished"] = "origSize=100659";
+            oSession.oResponse["CF-RAY"] = "642799945bef3274-KBP";
+            oSession.oResponse["cf-request-id"] = "098c9e50c100003274b495c000000001";
+            oSession.oResponse["ETag"] = "W/\"7b301cc0da31f753403915c11271bbd5\"";
+            oSession.oResponse["Expect-CT"] = "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"";
+            oSession.oResponse["Last-Modified"] = "Thu, 15 Apr 2021 13:43:27 GMT";
+            oSession.oResponse["Server"] = "cloudflare";
+
+            oSession.oResponse["Strict-Transport-Security"] = "max-age=2592000; includeSubDomains; preload1";
+            oSession.oResponse["Via"] = "1.1 bb014bef6518ccd6aad6b497f5e9c1d2.cloudfront.net (CloudFront)1";
+            oSession.oResponse["X-Amz-Cf-Id"] = "W9-2WiM57uV1QlYjGE0Zr3cvZW5cZ56qybOJZm8K7k0U1diMfggO8Q==1";
+            oSession.oResponse["X-Amz-Cf-Pop"] = "VIE50-C11";
+            oSession.oResponse["X-Cache"] = "Hit from cloudfront1";
+            oSession.oResponse["X-Content-Type-Options"] = "nosniff1";
+
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha-checkbox.deobfuscated.js");
+            oSession.oResponse["X-Alantoo"]="It's me";
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+
+        if (oSession.uriContains("/captcha/v1/89f9b6a/hcaptcha.js")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha.deobfuscated.js");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+
+        if (oSession.uriContains("/captcha/v1/89f9b6a/hcaptcha-challenge.js")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha-challenge.deobfuscated.js");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+        if (oSession.uriContains("/captcha/v1/89f9b6a/hcaptcha-checkbox.js")){
+            oSession["ui-color"]="orange";
+            oSession["ui-bold"]="true";
+            var deobfuscatedV = System.IO.File.ReadAllText("D:\\Workspace\\Clients\\VladykLukyanenko\\reverse\\cloudflare\\hcaptcha-checkbox.deobfuscated.js");
+            oSession.utilSetResponseBody(deobfuscatedV);
+        }
+
+
+
+
+        if (m_Hide304s && oSession.responseCode == 304) {
+            oSession["ui-hide"] = "true";
+        }
+    }
